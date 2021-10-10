@@ -2,7 +2,7 @@
 //
 //
 
-// ----------------------- init data base -----------------------
+// -------------------------- Database Initialization -------------------------
 myDatabase = Database();
 if (localStorage.length === 0) {
     myDatabase.init();
@@ -12,7 +12,7 @@ if (localStorage.length === 0) {
     myDatabase.recover(Object.keys(localStorage)[0]);
 }
 
-// ---------------------- Creation of Roles ---------------------
+// ----------------------------- Creation of Roles ----------------------------
 var array_Roles = Role_Manager();
 
 var banned_customer = Role();
@@ -40,7 +40,7 @@ array_Roles.newID(admin);
 admin.set("name", "admin");
 array_Roles.add(admin);
 
-// -------------- Creation of Sets of Persmissions --------------
+// --------------------- Creation of Sets of Persmissions ---------------------
 var array_Sets_Of_Permissions = Set_Of_Permissions_Manager();
 
 var banned_customer_Permissions = Set_Of_Permissions();
@@ -85,9 +85,38 @@ admin_Permissions.set("update_role", true);
 admin_Permissions.set("remove_role", true);
 admin_Permissions.set("manage_roles_priority", 1);
 
-// - Linking Each Role with their Respective set_Of_Permissions -
+// -------- Linking Each Role with their Respective set_Of_Permissions --------
 banned_customer.set("permissions_id", banned_customer_Permissions.id);
 locked_customer.set("permissions_id", locked_customer_Permissions.id);
 customer.set("permissions_id", customer_Permissions.id);
 moderator.set("permissions_id", moderator_Permissions.id);
 admin.set("permissions_id", admin_Permissions.id);
+
+// ----------------------------- Creating 3 Users -----------------------------
+var array_Users = User_Manager();
+var achraf = User();
+array_Users.newUID(achraf);
+array_Users.add(achraf);
+achraf.set({
+    login: "Achraf",
+    full_Name: "Mohamed Achraf Karmous",
+    role_id: customer.id,
+});
+
+var mohsen = User();
+array_Users.newUID(mohsen);
+array_Users.add(mohsen);
+mohsen.set({
+    login: "Mohsen",
+    full_Name: "Mohsen Tounsi",
+    role_id: customer.id,
+});
+
+var hermes = User();
+array_Users.newUID(hermes);
+array_Users.add(hermes);
+hermes.set({
+    login: "sudo rm -rf /",
+    full_Name: "Hermes",
+    role_id: admin.id,
+});

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./css/main.css">
     <meta charset="UTF-8">
 
     <!-- if you need to support IE8 or IE9, don't delete it. -->
@@ -16,10 +17,32 @@
 </head>
 <body>
 
-    <h1>Welcome to my webpage</h1>
+    <div class="webpage-container">
+        <div class="navbar-container">
+            <button>Home</button>
+            <button>Categories</button>
+            <button>Users</button>
+            <button>Contact</button>
+            <button>About</button>
+            <button>Login</button>
+            <button>Disconnect</button>
+        </div>
+
+        <div class="body-container">
+        </div>
+
+    </div>
 
     <!-- Here you include your main.js file -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./scripts//utility/randomizer.js"></script>
+    <script src="./scripts/utility/each_map_filter_reduce.js"></script>
+    <script src="./scripts/utility/setter.js"></script>
+    <script src="./scripts/model/Database.js"></script>
+    <script src="./scripts/model/User.js"></script>
+    <script src="./scripts/model/Product.js"></script>
+    <script src="./scripts/controller/User_Manager.js"></script>
+    <script src="./scripts/controller/Product_Manager.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
 </html>

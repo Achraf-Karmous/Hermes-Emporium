@@ -9,7 +9,7 @@ function Product() {
     product.reference = "";
     product.category_id = "";
     product.designation = "";
-    product.cost = "";
+    product.price = "";
     product.weight = "";
     product.dimention = "";
     product.quantity = "";

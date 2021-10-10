@@ -9,7 +9,8 @@ function Product() {
     product.reference = "";
     product.category_id = "";
     product.designation = "";
-    product.price = "";
+    product.price = -1;
+    product.money_name = "TND";
     product.weight = "";
     product.dimention = "";
     product.quantity = "";

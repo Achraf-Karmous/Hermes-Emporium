@@ -1,7 +1,7 @@
 function Set_Of_Permissions() {
     var set_Of_Permissions = new Object();
     set_Of_Permissions.id = 32767; // means permission "nobody"
-    set_Of_Permissions.login = true; // give the permission to the user to login
+    set_Of_Permissions.login = true; // give the permission to the user to login to his own account
 
     set_Of_Permissions.view_user = true; // give the permission to the user to "View any user"
     set_Of_Permissions.add_user = false; // give the permission to the user to "Create a new user"

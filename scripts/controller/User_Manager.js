@@ -9,7 +9,7 @@ function User_Manager() {
 }
 
 function newUID(myUser) {
-    if (this.length - 1) {
+    if (this.length === 0) {
         console.log(myUser);
         myUser.uid = 1000; // uid starts from 1; like in Unix-like system
         console.log(

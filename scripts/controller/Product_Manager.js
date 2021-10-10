@@ -9,7 +9,7 @@ function Product_Manager() {
 }
 
 function newID(myProduct) {
-    if (this.length - 1) {
+    if (this.length === 0) {
         console.log(myProduct);
         myProduct.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
@@ -100,15 +100,15 @@ var array_Products = Product_Manager();
 var pasta = Product();
 array_Products.newID(pasta);
 array_Products.add(pasta);
-achraf.set("login", "achraf");
-achraf.set("full_Name", "Mohamed Achraf Karmous");
+pasta.set("full_Name", "Randa");
+pasta.set("price", 0.6);
 
-var mohsen = Product();
-array_Products.newID(mohsen);
-array_Products.add(mohsen);
-mohsen.set("login", "mohsen");
-mohsen.set("full_Name", "Mohsen Tounsi");
+var chocolate = Product();
+array_Products.newID(chocolate);
+array_Products.add(chocolate);
+chocolate.set("full_Name", "Nutella");
+chocolate.set("price", 5);
 console.log(array_Products);
 
-var mohsen2 = Product();
-array_Products.remove(mohsen);
+var moon = Product();
+array_Products.remove(moon);

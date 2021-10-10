@@ -139,31 +139,31 @@ function empty_localStorage() {
 
 // ---------- Testing these methods ---------------
 
-// clearing our local storage
-empty_localStorage();
+// // clearing our local storage
+// empty_localStorage();
 
-// creating a new database
-myDatabase = Database();
+// // creating a new database
+// myDatabase = Database();
 
-// Initializing security + saving it into the local storage
-myDatabase.init();
+// // Initializing security + saving it into the local storage
+// myDatabase.init();
 
-// recovering our actual database
-myDatabase.recover(); // this will return the object
+// // recovering our actual database
+// myDatabase.recover(); // this will return the object
 
-//save our modified version of myDatabase
-myDatabase.addElement("array", [1, 2, 2, 2, 4]);
+// //save our modified version of myDatabase
+// myDatabase.addElement("array", [1, 2, 2, 2, 4]);
 
-// Messing up our database
-myDatabase.string = "";
-myDatabase.object = undefined;
+// // Messing up our database
+// myDatabase.string = "";
+// myDatabase.object = undefined;
 
-// getting the new value of our database
-myDatabase.recover();
+// // getting the new value of our database
+// myDatabase.recover();
 
-// getting the element from our database
-myDatabase.getElement("array");
-myDatabase.deleteElement("array");
+// // getting the element from our database
+// myDatabase.getElement("array");
+// myDatabase.deleteElement("array");
 
-// removing the database from our local storage
-myDatabase.destroy();
+// // removing the database from our local storage
+// myDatabase.destroy();

@@ -10,5 +10,6 @@ function Bill() {
     bill.active = true; // active or removed
     bill.removed_At = null;
     bill.set = set;
+    console.log("Creating a new bill:\n", bill);
     return bill;
 }

@@ -22,5 +22,6 @@ function Product() {
     product.legal = true; // active or removed
     product.removed_At = null;
     product.set = set;
+    console.log("Creating a new product:\n", product);
     return product;
 }

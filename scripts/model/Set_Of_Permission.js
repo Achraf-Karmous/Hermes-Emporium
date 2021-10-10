@@ -37,5 +37,6 @@ function Set_Of_Permissions() {
     set_Of_Permissions.active = true; // active or removed
     set_Of_Permissions.removed_At = null;
     set_Of_Permissions.set = set;
+    console.log("Creating a new set of permessions:\n", set_Of_Permissions);
     return set_Of_Permissions;
 }

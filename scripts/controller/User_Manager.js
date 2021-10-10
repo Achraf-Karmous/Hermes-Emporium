@@ -1,16 +1,16 @@
 function User_Manager() {
     var array_Users = [];
     // adding attributes to an array and make it like an object
-    array_Users.newUID = newUID;
-    array_Users.add = add;
+    array_Users.new_User_ID = new_User_ID;
+    array_Users.add_User = add_User;
     // array_Users.update = update;
-    array_Users.remove = remove;
+    array_Users.remove_User = remove_User;
+    console.log("Creating a new array_Users (array of Users):\n", array_Users);
     return array_Users;
 }
 
-function newUID(myUser) {
+function new_User_ID(myUser) {
     if (this.length === 0) {
-        console.log(myUser);
         myUser.uid = 1000; // uid starts from 1; like in Unix-like system
         console.log(
             "A new User with UID",
@@ -24,7 +24,7 @@ function newUID(myUser) {
 }
 
 // add a new user to the array_Users
-function add(myUser) {
+function add_User(myUser) {
     this.push(myUser);
     console.log(
         "The user UID",
@@ -52,7 +52,7 @@ function add(myUser) {
 // }
 
 // search the given user and remove it
-function remove(myUser) {
+function remove_User(myUser) {
     var success = false;
     var index = reduce(
         this,
@@ -71,7 +71,8 @@ function remove(myUser) {
         },
         -1 // means not found
     );
-    if (index > 0) {
+
+    if (index >= 0) {
         this[index].set({ active: false, removed_At: new Date() });
         success = true;
 
@@ -96,20 +97,3 @@ function remove(myUser) {
 }
 
 // ---------- Testing these methods ---------------
-
-// var array_Users = User_Manager();
-// var achraf = User();
-// array_Users.newUID(achraf);
-// array_Users.add(achraf);
-// achraf.set("login", "achraf");
-// achraf.set("full_Name", "Mohamed Achraf Karmous");
-
-// var mohsen = User();
-// array_Users.newUID(mohsen);
-// array_Users.add(mohsen);
-// mohsen.set("login", "mohsen");
-// mohsen.set("full_Name", "Mohsen Tounsi");
-// console.log(array_Users);
-
-// var mohsen2 = User();
-// array_Users.remove(mohsen);

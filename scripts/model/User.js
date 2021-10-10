@@ -16,5 +16,6 @@ function User() {
     user.active = true; // active or removed
     user.removed_At = null;
     user.set = set;
+    console.log("Creating a new user:\n", user);
     return user;
 }

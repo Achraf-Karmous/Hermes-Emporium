@@ -7,5 +7,6 @@ function Role() {
     role.active = true; // active or removed
     role.removed_At = null;
     role.set = set;
+    console.log("Creating a new role:\n", role);
     return role;
 }

@@ -1,16 +1,19 @@
 function Product_Manager() {
     var array_Products = [];
     // adding attributes to an array and make it like an object
-    array_Products.newID = newID;
-    array_Products.add = add;
+    array_Products.new_Product_ID = new_Product_ID;
+    array_Products.add_Product = add_Product;
     // array_Products.update = update;
-    array_Products.remove = remove;
+    array_Products.remove_Product = remove_Product;
+    console.log(
+        "Creating a new array_Products (array of Products):\n",
+        array_Products
+    );
     return array_Products;
 }
 
 function newID(myProduct) {
     if (this.length === 0) {
-        console.log(myProduct);
         myProduct.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
             "A new product with ID",
@@ -24,7 +27,7 @@ function newID(myProduct) {
 }
 
 // add a new product to the array_Products
-function add(myProduct) {
+function add_Product(myProduct) {
     this.push(myProduct);
     console.log(
         "The Product ID",
@@ -52,7 +55,7 @@ function add(myProduct) {
 // }
 
 // search the given product and remove it
-function remove(myProduct) {
+function remove_Product(myProduct) {
     var success = false;
     var index = reduce(
         this,
@@ -71,7 +74,8 @@ function remove(myProduct) {
         },
         -1 // means not found
     );
-    if (index > 0) {
+
+    if (index >= 0) {
         this[index].set({ legal: false, removed_At: new Date() });
         success = true;
 

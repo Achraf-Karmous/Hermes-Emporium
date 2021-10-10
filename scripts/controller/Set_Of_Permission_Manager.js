@@ -1,10 +1,10 @@
 function Set_Of_Permissions_Manager() {
     var array_Sets_Of_Permissions = new Array();
     // adding attributes to an array and make it like an object
-    array_Sets_Of_Permissions.newID = newID;
-    array_Sets_Of_Permissions.add = add;
+    array_Sets_Of_Permissions.new_Permissions_ID = new_Permissions_ID;
+    array_Sets_Of_Permissions.add_Permissions = add_Permissions;
     // array_Sets_Of_Permissions.update = update;
-    array_Sets_Of_Permissions.remove = remove;
+    array_Sets_Of_Permissions.remove_Permissions = remove_Permissions;
     console.log(
         "Creating a new array_Sets_Of_Permissions (Sets of Persmissions):\n",
         array_Sets_Of_Permissions
@@ -12,7 +12,7 @@ function Set_Of_Permissions_Manager() {
     return array_Sets_Of_Permissions;
 }
 
-function newID(mySet_Of_Permissions) {
+function new_Permissions_ID(mySet_Of_Permissions) {
     if (this.length === 0) {
         mySet_Of_Permissions.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
@@ -27,7 +27,7 @@ function newID(mySet_Of_Permissions) {
 }
 
 // add a new set of permissions to the array_Sets_Of_Permissions
-function add(mySet_Of_Permissions) {
+function add_Permissions(mySet_Of_Permissions) {
     this.push(mySet_Of_Permissions);
     console.log(
         "The set of permissions with the ID",
@@ -55,7 +55,7 @@ function add(mySet_Of_Permissions) {
 // }
 
 // search the given set of permissions and remove it
-function remove(mySet_Of_Permissions) {
+function remove_Permissions(mySet_Of_Permissions) {
     var success = false;
     var index = reduce(
         this,
@@ -74,7 +74,8 @@ function remove(mySet_Of_Permissions) {
         },
         -1 // means not found
     );
-    if (index > 0) {
+
+    if (index >= 0) {
         this[index].set({ active: false, removed_At: new Date() });
         success = true;
 

@@ -6,5 +6,6 @@ function Category() {
     category.active = true; // active or removed
     category.removed_At = null;
     category.set = set;
+    console.log("Creating a new category:\n", category);
     return category;
 }

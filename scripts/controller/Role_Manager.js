@@ -1,15 +1,15 @@
 function Role_Manager() {
     var array_Roles = new Array();
     // adding attributes to an array and make it like an object
-    array_Roles.newID = newID;
-    array_Roles.add = add;
+    array_Roles.new_Role_ID = new_Role_ID;
+    array_Roles.add_Role = add_Role;
     // array_Roles.update = update;
-    array_Roles.remove = remove;
+    array_Roles.remove_Role = remove_Role;
     console.log("Creating a new array_Roles (array of Roles):\n", array_Roles);
     return array_Roles;
 }
 
-function newID(myRole) {
+function new_Role_ID(myRole) {
     if (this.length === 0) {
         myRole.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
@@ -22,7 +22,7 @@ function newID(myRole) {
 }
 
 // add a new role to the array_Roles
-function add(myRole) {
+function add_Role(myRole) {
     this.push(myRole);
     console.log(
         "The role with the ID",
@@ -50,7 +50,7 @@ function add(myRole) {
 // }
 
 // search the given role and remove it
-function remove(myRole) {
+function remove_Role(myRole) {
     var success = false;
     var index = reduce(
         this,
@@ -69,7 +69,8 @@ function remove(myRole) {
         },
         -1 // means not found
     );
-    if (index > 0) {
+
+    if (index >= 0) {
         this[index].set({ active: false, removed_At: new Date() });
         success = true;
 

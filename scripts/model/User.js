@@ -1,6 +1,7 @@
 function User() {
     var user = new Object();
     user.uid = 32767; // means user "nobody"
+    user.role_id = 32767; // means role "nobody"
     user.login = null;
     user.full_Name = null;
     user.phone_Number = null;

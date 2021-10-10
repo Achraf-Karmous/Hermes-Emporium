@@ -85,6 +85,7 @@ admin_Permissions.set("update_role", true);
 admin_Permissions.set("remove_role", true);
 admin_Permissions.set("manage_roles_priority", 1);
 
+// - Linking Each Role with their Respective set_Of_Permissions -
 banned_customer.set("permissions_id", banned_customer_Permissions.id);
 locked_customer.set("permissions_id", locked_customer_Permissions.id);
 customer.set("permissions_id", customer_Permissions.id);

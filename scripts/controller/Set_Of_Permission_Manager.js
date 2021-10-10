@@ -1,33 +1,37 @@
 function Set_Of_Permissions_Manager() {
-    var array_Sets_Of_Permissions = [];
+    var array_Sets_Of_Permissions = new Array();
     // adding attributes to an array and make it like an object
     array_Sets_Of_Permissions.newID = newID;
     array_Sets_Of_Permissions.add = add;
     // array_Sets_Of_Permissions.update = update;
     array_Sets_Of_Permissions.remove = remove;
+    console.log(
+        "Creating a new array_Sets_Of_Permissions (Sets of Persmissions):\n",
+        array_Sets_Of_Permissions
+    );
     return array_Sets_Of_Permissions;
 }
 
-function newID(mySet_Of_Permission) {
+function newID(mySet_Of_Permissions) {
     if (this.length === 0) {
-        mySet_Of_Permission.id = 1000; // id starts from 1; like in Unix-like system
+        mySet_Of_Permissions.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
-            "A new set of permissions with ID",
-            mySet_Of_Permission.id,
-            "has been created:\n",
-            mySet_Of_Permission
+            'A new ID "' +
+                mySet_Of_Permissions.id +
+                '" have been given to the set of permissions:\n',
+            mySet_Of_Permissions
         );
     } else {
-        mySet_Of_Permission.id = this[this.length - 1].id + 1;
+        mySet_Of_Permissions.id = this[this.length - 1].id + 1;
     }
 }
 
 // add a new set of permissions to the array_Sets_Of_Permissions
-function add(mySet_Of_Permission) {
-    this.push(mySet_Of_Permission);
+function add(mySet_Of_Permissions) {
+    this.push(mySet_Of_Permissions);
     console.log(
-        "The set of permissions ID",
-        mySet_Of_Permission.id,
+        "The set of permissions with the ID",
+        mySet_Of_Permissions.id,
         "has been added to the database:\n",
         this
     );
@@ -35,13 +39,13 @@ function add(mySet_Of_Permission) {
 
 // useless function, because when I use the setter, the set of permissions is updated automatically
 // search for the set of permissions and update it
-// function update(mySet_Of_Permission) {
+// function update(mySet_Of_Permissions) {
 //     var i = 0;
 //     while (i < this.length) {
-//         if (mySet_Of_Permission.id === this[i].id) {
-//             this[i] = mySet_Of_Permission;
+//         if (mySet_Of_Permissions.id === this[i].id) {
+//             this[i] = mySet_Of_Permissions;
 //             console.log(
-//                 "Updating the set of permissions with the ID " + mySet_Of_Permission.id + " :\n",
+//                 "Updating the set of permissions with the ID " + mySet_Of_Permissions.id + " :\n",
 //                 this[i]
 //             );
 //             break;
@@ -51,15 +55,15 @@ function add(mySet_Of_Permission) {
 // }
 
 // search the given set of permissions and remove it
-function remove(mySet_Of_Permission) {
+function remove(mySet_Of_Permissions) {
     var success = false;
     var index = reduce(
         this,
         function (index, element, i) {
-            if (element.id === mySet_Of_Permission.id) {
+            if (element.id === mySet_Of_Permissions.id) {
                 console.log(
                     'Disabling the set of permissions "' +
-                        mySet_Of_Permission.id +
+                        mySet_Of_Permissions.id +
                         '" (found inside the "array_Sets_Of_Permissions", at the of position:' +
                         i +
                         ")"
@@ -76,8 +80,8 @@ function remove(mySet_Of_Permission) {
 
         console.log(
             'Permission with ID "' +
-                mySet_Of_Permission.id +
-                '" have been changed (mySet_Of_Permission.active: true -> false) inside "array_Sets_Of_Permissions[' +
+                mySet_Of_Permissions.id +
+                '" have been changed (mySet_Of_Permissions.active: true -> false) inside "array_Sets_Of_Permissions[' +
                 index +
                 ']" :\n',
             this
@@ -85,7 +89,7 @@ function remove(mySet_Of_Permission) {
     } else {
         console.log(
             'Permission with ID "' +
-                mySet_Of_Permission.id +
+                mySet_Of_Permissions.id +
                 '" is not found inside "array_Sets_Of_Permissions" :\n',
             this
         );

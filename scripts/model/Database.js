@@ -9,6 +9,7 @@ function Database() {
     database.addElement = addElement;
     database.deleteElement = deleteElement;
     database.destroy = destroy;
+    console.log("Creating a new database:\n", database);
     return database;
 }
 

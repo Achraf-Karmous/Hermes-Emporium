@@ -51,6 +51,7 @@ function add(myUser) {
 //     }
 // }
 
+// search the given user and remove it
 function remove(myUser) {
     var success = false;
     var index = reduce(
@@ -94,21 +95,21 @@ function remove(myUser) {
     return success;
 }
 
-// search the given user and remove it
+// ---------- Testing these methods ---------------
 
-var array_Users = User_Manager();
-var achraf = User();
-array_Users.newUID(achraf);
-array_Users.add(achraf);
-achraf.set("login", "achraf");
-achraf.set("full_Name", "Mohamed Achraf Karmous");
+// var array_Users = User_Manager();
+// var achraf = User();
+// array_Users.newUID(achraf);
+// array_Users.add(achraf);
+// achraf.set("login", "achraf");
+// achraf.set("full_Name", "Mohamed Achraf Karmous");
 
-var mohsen = User();
-array_Users.newUID(mohsen);
-array_Users.add(mohsen);
-mohsen.set("login", "mohsen");
-mohsen.set("full_Name", "Mohsen Tounsi");
-console.log(array_Users);
+// var mohsen = User();
+// array_Users.newUID(mohsen);
+// array_Users.add(mohsen);
+// mohsen.set("login", "mohsen");
+// mohsen.set("full_Name", "Mohsen Tounsi");
+// console.log(array_Users);
 
-var mohsen2 = User();
-array_Users.remove(mohsen);
+// var mohsen2 = User();
+// array_Users.remove(mohsen);

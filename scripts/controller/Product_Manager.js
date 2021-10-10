@@ -51,6 +51,7 @@ function add(myProduct) {
 //     }
 // }
 
+// search the given product and remove it
 function remove(myProduct) {
     var success = false;
     var index = reduce(
@@ -94,21 +95,21 @@ function remove(myProduct) {
     return success;
 }
 
-// search the given product and remove it
+// ---------- Testing these methods ---------------
 
-var array_Products = Product_Manager();
-var pasta = Product();
-array_Products.newID(pasta);
-array_Products.add(pasta);
-pasta.set("full_Name", "Randa");
-pasta.set("price", 0.6);
+// var array_Products = Product_Manager();
+// var pasta = Product();
+// array_Products.newID(pasta);
+// array_Products.add(pasta);
+// pasta.set("full_Name", "Randa");
+// pasta.set("price", 0.6);
 
-var chocolate = Product();
-array_Products.newID(chocolate);
-array_Products.add(chocolate);
-chocolate.set("full_Name", "Nutella");
-chocolate.set("price", 5);
-console.log(array_Products);
+// var chocolate = Product();
+// array_Products.newID(chocolate);
+// array_Products.add(chocolate);
+// chocolate.set("full_Name", "Nutella");
+// chocolate.set("price", 5);
+// console.log(array_Products);
 
-var moon = Product();
-array_Products.remove(moon);
+// var moon = Product();
+// array_Products.remove(moon);

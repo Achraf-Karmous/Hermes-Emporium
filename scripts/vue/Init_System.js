@@ -131,6 +131,15 @@ mohsen.set({
     role_id: customer.id,
 });
 
+var schnell = User();
+array_Users.new_User_ID(schnell);
+array_Users.add_User(schnell);
+mohsen.set({
+    login: "Schnell",
+    full_Name: "Schnell",
+    role_id: customer.id,
+});
+
 var hermes = User();
 array_Users.new_User_ID(hermes);
 array_Users.add_User(hermes);
@@ -178,19 +187,20 @@ array_Categories.add_Category(impossible);
 impossible.set({ name: "impossible" });
 console.groupEnd();
 
-// ---------------------------- Creating 4 products ---------------------------
+// ---------------------------- Creating 3 products ---------------------------
 console.group(
-    "----------------------------- Creating 4 products ----------------------------"
+    "----------------------------- Creating 3 products ----------------------------"
 );
 
 var array_Products = Product_Manager();
-var pasta = Product();
-array_Products.new_Product_ID(pasta);
-array_Products.add_Product(pasta);
-pasta.set({
-    full_Name: "Randa",
+var coke = Product();
+array_Products.new_Product_ID(coke);
+array_Products.add_Product(coke);
+coke.set({
+    full_Name: "Coca Cola",
     category_id: food.id,
-    price: 0.6,
+    price: 1.5,
+    quantity: 2000,
     owner: { uid: achraf.uid, owned_at: new Date() },
 });
 
@@ -201,7 +211,19 @@ chocolate.set({
     full_Name: "Nutella",
     category_id: food.id,
     price: 5,
+    quantity: 3000,
     owner: { uid: mohsen.uid, owned_at: new Date() },
+});
+
+var sandwich = Product();
+array_Products.new_Product_ID(sandwich);
+array_Products.add_Product(sandwich);
+sandwich.set({
+    full_Name: "sandwich",
+    category_id: food.id,
+    price: 8,
+    quantity: 3000,
+    owner: { uid: schnell.uid, owned_at: new Date() },
 });
 
 var moon = Product();
@@ -211,6 +233,46 @@ moon.set({
     full_Name: "Moon",
     category_id: impossible.id,
     price: Infinity,
+    quantity: 1,
+    owner: { uid: hermes.uid, owned_at: new Date() },
+});
+
+console.groupEnd();
+
+// ----------------------------- Creating 2 bills -----------------------------
+console.group(
+    "------------------------------ Creating 2 bills ------------------------------"
+);
+
+var array_Bills = Bill_Manager();
+var bill_1 = Bill();
+array_Bills.new_Bill_ID(bill_1);
+array_Bills.add_Bill(bill_1);
+coke.set({
+    buyer_id: mohsen.uid,
+    seller_id: achraf.uid,
+    products_ids: [coke.id],
+    total: 1.5,
+});
+
+var bill_2 = Bill();
+array_Bills.new_Bill_ID(bill_2);
+array_Bills.add_Bill(bill_2);
+coke.set({
+    buyer_id: "Coca Cola",
+    seller_id: "Coca Cola",
+    products_ids: [coke.id, chocolate.id],
+    total: 6.5,
+});
+
+var moon = Product();
+array_Products.new_Product_ID(moon);
+array_Products.add_Product(moon);
+moon.set({
+    full_Name: "Moon",
+    category_id: impossible.id,
+    price: Infinity,
+    quantity: 1,
     owner: { uid: hermes.uid, owned_at: new Date() },
 });
 

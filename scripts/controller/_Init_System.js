@@ -46,6 +46,8 @@ var admin = Role();
 array_Roles.new_Role_ID(admin);
 admin.set("name", "admin");
 array_Roles.add_Role(admin);
+
+myDatabase.addElement("array_Roles", array_Roles);
 console.groupEnd();
 
 // --------------------- Creation of Sets of Persmissions ---------------------
@@ -95,6 +97,7 @@ admin_Permissions.set("add_role", true);
 admin_Permissions.set("update_role", true);
 admin_Permissions.set("remove_role", true);
 admin_Permissions.set("manage_roles_priority", 1);
+
 console.groupEnd();
 
 // -------- Linking Each Role with their Respective set_Of_Permissions --------
@@ -106,11 +109,13 @@ locked_customer.set("permissions_id", locked_customer_Permissions.id);
 customer.set("permissions_id", customer_Permissions.id);
 moderator.set("permissions_id", moderator_Permissions.id);
 admin.set("permissions_id", admin_Permissions.id);
+
+myDatabase.addElement("array_Sets_Of_Permissions", array_Sets_Of_Permissions);
 console.groupEnd();
 
 // ----------------------------- Creating 3 Users -----------------------------
 console.group(
-    "------------------------------ Creating 3 Users ------------------------------"
+    "------------------------------ Creating 4 Users ------------------------------"
 );
 var array_Users = User_Manager();
 var achraf = User();
@@ -148,6 +153,8 @@ hermes.set({
     full_Name: "Hermes",
     role_id: admin.id,
 });
+
+myDatabase.addElement("array_Users", array_Users);
 console.groupEnd();
 
 // ----------------------- Creating Login History System ----------------------
@@ -164,6 +171,8 @@ login_History.set({ user_uid: achraf.uid });
 
 // when a user is disconnecting :
 array_Logins_History.remove_Login_History(achraf);
+
+myDatabase.addElement("array_Logins_History", array_Logins_History);
 console.groupEnd();
 
 // --------------------------- Creating 4 Categories --------------------------
@@ -185,11 +194,13 @@ var impossible = Category();
 array_Categories.new_Category_ID(impossible);
 array_Categories.add_Category(impossible);
 impossible.set({ name: "impossible" });
+
+myDatabase.addElement("array_Categories", array_Categories);
 console.groupEnd();
 
-// ---------------------------- Creating 3 products ---------------------------
+// ---------------------------- Creating 4 products ---------------------------
 console.group(
-    "----------------------------- Creating 3 products ----------------------------"
+    "----------------------------- Creating 4 products ----------------------------"
 );
 
 var array_Products = Product_Manager();
@@ -237,6 +248,7 @@ moon.set({
     owner: { uid: hermes.uid, owned_at: new Date() },
 });
 
+myDatabase.addElement("array_Products", array_Products);
 console.groupEnd();
 
 // ----------------------------- Creating 2 bills -----------------------------
@@ -250,22 +262,24 @@ var array_Bills = Bill_Manager();
 var bill_1 = Bill();
 array_Bills.new_Bill_ID(bill_1);
 array_Bills.add_Bill(bill_1);
-coke.set({
+bill_1.set({
     buyer_id: mohsen.uid,
     seller_id: achraf.uid,
     products_ids: [coke.id],
-    total: 1.5,
+    total_TaxIncluded: 1.5,
 });
 
 // Mohsen Bought from Schnell 1 Sandwich
 var bill_2 = Bill();
 array_Bills.new_Bill_ID(bill_2);
 array_Bills.add_Bill(bill_2);
-coke.set({
+bill_2.set({
     buyer_id: mohsen.uid,
     seller_id: schnell.uid,
     products_ids: [sandwich.id],
-    total: 6,
+    total_TaxIncluded: 6,
 });
 
+myDatabase.addElement("array_Bills", array_Bills);
+console.log(myDatabase.object);
 console.groupEnd();

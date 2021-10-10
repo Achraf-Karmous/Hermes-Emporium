@@ -95,5 +95,3 @@ function remove_User(myUser) {
     }
     return success;
 }
-
-// ---------- Testing these methods ---------------

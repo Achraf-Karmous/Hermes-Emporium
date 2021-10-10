@@ -4,8 +4,6 @@ function Product() {
     product.owner = {}; // object of users.uid & owned_at
     product.owner.uid = 32767;
     product.owner.owned_at = {}; // object of dates
-    product.owner.shown_at = {}; // object of dates
-    product.owner.bill_id = {}; // object of bills
     product.reference = "";
     product.category_id = "";
     product.designation = "";

@@ -156,3 +156,62 @@ login_History.set({ user_uid: achraf.uid });
 // when a user is disconnecting :
 array_Logins_History.remove_Login_History(achraf);
 console.groupEnd();
+
+// --------------------------- Creating 4 Categories --------------------------
+console.group(
+    "--------------------------- Creating 4 Categories ----------------------------"
+);
+var array_Categories = Category_Manager();
+var food = Category();
+array_Categories.new_Category_ID(food);
+array_Categories.add_Category(food);
+food.set({ name: "food" });
+
+var service = Category();
+array_Categories.new_Category_ID(service);
+array_Categories.add_Category(service);
+service.set({ name: "service" });
+
+var impossible = Category();
+array_Categories.new_Category_ID(impossible);
+array_Categories.add_Category(impossible);
+impossible.set({ name: "impossible" });
+console.groupEnd();
+
+// ---------------------------- Creating 4 products ---------------------------
+console.group(
+    "----------------------------- Creating 4 products ----------------------------"
+);
+
+var array_Products = Product_Manager();
+var pasta = Product();
+array_Products.new_Product_ID(pasta);
+array_Products.add_Product(pasta);
+pasta.set({
+    full_Name: "Randa",
+    category_id: food.id,
+    price: 0.6,
+    owner: { uid: achraf.uid, owned_at: new Date() },
+});
+
+var chocolate = Product();
+array_Products.new_Product_ID(chocolate);
+array_Products.add_Product(chocolate);
+chocolate.set({
+    full_Name: "Nutella",
+    category_id: food.id,
+    price: 5,
+    owner: { uid: mohsen.uid, owned_at: new Date() },
+});
+
+var moon = Product();
+array_Products.new_Product_ID(moon);
+array_Products.add_Product(moon);
+moon.set({
+    full_Name: "Moon",
+    category_id: impossible.id,
+    price: Infinity,
+    owner: { uid: hermes.uid, owned_at: new Date() },
+});
+
+console.groupEnd();

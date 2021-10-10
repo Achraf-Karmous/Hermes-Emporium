@@ -12,7 +12,7 @@ function Product_Manager() {
     return array_Products;
 }
 
-function newID(myProduct) {
+function new_Product_ID(myProduct) {
     if (this.length === 0) {
         myProduct.id = 1000; // id starts from 1; like in Unix-like system
         console.log(
@@ -98,22 +98,3 @@ function remove_Product(myProduct) {
     }
     return success;
 }
-
-// ---------- Testing these methods ---------------
-
-// var array_Products = Product_Manager();
-// var pasta = Product();
-// array_Products.newID(pasta);
-// array_Products.add(pasta);
-// pasta.set("full_Name", "Randa");
-// pasta.set("price", 0.6);
-
-// var chocolate = Product();
-// array_Products.newID(chocolate);
-// array_Products.add(chocolate);
-// chocolate.set("full_Name", "Nutella");
-// chocolate.set("price", 5);
-// console.log(array_Products);
-
-// var moon = Product();
-// array_Products.remove(moon);

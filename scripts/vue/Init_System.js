@@ -245,6 +245,8 @@ console.group(
 );
 
 var array_Bills = Bill_Manager();
+
+// Mohsen Bought from Achraf 1 Coke
 var bill_1 = Bill();
 array_Bills.new_Bill_ID(bill_1);
 array_Bills.add_Bill(bill_1);
@@ -255,25 +257,15 @@ coke.set({
     total: 1.5,
 });
 
+// Mohsen Bought from Schnell 1 Sandwich
 var bill_2 = Bill();
 array_Bills.new_Bill_ID(bill_2);
 array_Bills.add_Bill(bill_2);
 coke.set({
-    buyer_id: "Coca Cola",
-    seller_id: "Coca Cola",
-    products_ids: [coke.id, chocolate.id],
-    total: 6.5,
-});
-
-var moon = Product();
-array_Products.new_Product_ID(moon);
-array_Products.add_Product(moon);
-moon.set({
-    full_Name: "Moon",
-    category_id: impossible.id,
-    price: Infinity,
-    quantity: 1,
-    owner: { uid: hermes.uid, owned_at: new Date() },
+    buyer_id: mohsen.uid,
+    seller_id: schnell.uid,
+    products_ids: [sandwich.id],
+    total: 6,
 });
 
 console.groupEnd();

@@ -139,7 +139,7 @@ mohsen.set({
 var schnell = User();
 array_Users.new_User_ID(schnell);
 array_Users.add_User(schnell);
-mohsen.set({
+schnell.set({
     login: "Schnell",
     full_Name: "Schnell",
     role_id: customer.id,

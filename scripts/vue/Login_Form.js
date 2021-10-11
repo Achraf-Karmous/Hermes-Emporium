@@ -16,6 +16,7 @@ var $login_form = $(`
     <br>
 </div>`);
 $(".main-body").append($login_form);
+$(".user-fullName").hide();
 
 $("#login-btn").on("click", function () {
     // first we read the value of the tweet input
@@ -30,9 +31,8 @@ $("#login-btn").on("click", function () {
         },
         -1 // means not found
     );
-
     if (index >= 0) {
-        window.user = array_Users[index];
+        user = array_Users[index];
 
         // create a new login_history
         var login_History = Login_History();
@@ -41,6 +41,10 @@ $("#login-btn").on("click", function () {
         login_History.set({ user_uid: user.uid });
         myDatabase.addElement("login_History", login_History);
         myDatabase.addElement("array_Users", array_Users);
+        myDatabase.addElement("uid", user.uid);
+        $(".login-container").hide();
+        $(".login").hide();
+        $(".disconnect").show();
     } else {
         var user = User();
         array_Users.new_User_ID(user);
@@ -50,10 +54,13 @@ $("#login-btn").on("click", function () {
             role_id: customer.id,
         });
         $(".login-container").hide();
+        $(".user-fullName").show();
     }
 });
 
 $("#save-fullName").on("click", function () {
+    console.log("AAAAAAAAAAAAAAAAAAAA");
+    console.log(index);
     // first we read the value of the tweet input
     var fullName = $("#fullName-input").val();
     var array_Users = myDatabase.object["array_Users"];
@@ -68,6 +75,6 @@ $("#save-fullName").on("click", function () {
     myDatabase.addElement("login_History", login_History);
     myDatabase.addElement("array_Users", array_Users);
     $(".user-fullName").hide();
-    $(".login").show();
+    $(".login").hide();
     $(".disconnect").show();
 });

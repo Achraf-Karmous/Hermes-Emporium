@@ -16,9 +16,12 @@ function render_Login_History(myLogin_History) {
 }
 
 function render_All_History() {
-    var array_Logins_History = myDatabase.object["array_Logins_History"];
-    var uid = array_Logins_History[array_Logins_History.length - 1];
-    return uid;
+    var user = myDatabase.getElement("current_user");
+    var history = myDatabase.getElement("array_Logins_History");
+    var histories_list = filter(history, function (element) {
+        return user.uid === element.user_uid;
+    });
+    each(histories_list, function (element) {
+        render_Login_History(element);
+    });
 }
-console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-console.log(render_All_History());

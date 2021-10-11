@@ -64,6 +64,7 @@ $("#login-btn").on("click", function () {
         myDatabase.addElement("current_user", user);
         $(".login-container").hide();
         $(".user-fullName").show();
+        render_All_History();
     }
 });
 
@@ -84,6 +85,7 @@ $("#save-fullName").on("click", function () {
     $(".user-fullName").hide();
     $(".login").hide();
     $(".disconnect").show();
+    render_All_History();
 });
 
 $(".disconnect").on("click", function () {

@@ -14,9 +14,26 @@ var $login_form = $(`
     <button id="save-fullName" type="button"> Save </button>
     <br>
     <br>
+</div>
+<div class="login-history">
+    <br>
+    <label class="Label" for="login">Enter your full name : </label>
+    <input type="text" id="fullName-input" name="fname">
+    <button id="save-fullName" type="button"> Save </button>
+    <br>
+    <br>
+</div>
+<div class="owned-product">
+    <br>
+    <label class="Label" for="login">Enter your full name : </label>
+    <input type="text" id="fullName-input" name="fname">
+    <button id="save-fullName" type="button"> Save </button>
+    <br>
+    <br>
 </div>`);
 $(".main-body").append($login_form);
 $(".user-fullName").hide();
+$("a").removeAttr("href");
 
 $("#login-btn").on("click", function () {
     // first we read the value of the tweet input
@@ -45,6 +62,7 @@ $("#login-btn").on("click", function () {
         $(".login-container").hide();
         $(".login").hide();
         $(".disconnect").show();
+        $(".dashboard").show();
     } else {
         var user = User();
         array_Users.new_User_ID(user);

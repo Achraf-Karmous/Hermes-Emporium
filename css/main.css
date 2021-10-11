@@ -39,6 +39,7 @@
     padding: 10px; /* spacing between 2 elemeent menu */
     color: white; /* Text color : white */
     text-decoration: none; /* Removing the underlined text : white */
+    cursor: pointer;
 }
 
 .navbar a:hover {
@@ -80,7 +81,8 @@
 }
 
 .login-container,
-.user-fullName {
+.user-fullName,
+.login-history {
     text-align: center; /* center the title (horizantally)*/
     display: block;
 }

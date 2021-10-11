@@ -1,24 +1,86 @@
-ul {
-    list-style-type: none;
+* {
+    margin: 0; /* Removing margin for every element */
+    padding: 0; /* Removing padding for every element */
+}
+
+.topside-container {
+    background-image: url("/img/pexels-aleksejs-bergmanis-681335.jpg"); /* url of the img */
+    background-size: cover; /* Image will take all screen width */
+    padding-bottom: 0.1px; /* css logic is so wierd */
+}
+
+.navbar {
+    background-color: rgb(40, 40, 161);
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 2px solid white;
+}
+
+.navbar ul {
     margin: 0;
-    padding: 0;
 }
-li {
-    display: inline;
-    float: left;
-}
-a {
-    display: block;
-    padding: 8px;
-    background-color: #dddddd;
-}
-.webpage-container {
-    position: absolute;
-}
-.navbar-container {
-    position: sticky;
+
+.nav a {
     display: inline-block;
-    background-color: red;
-    border: 1px solid coral;
-    border-color: coral;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar li {
+    margin: 0;
+    display: inline;
+    padding: 0 50px;
+}
+
+.navbar a {
+    display: inline-block; /* I need to add padding top & bottom */
+    padding: 10px; /* spacing between 2 elemeent menu */
+    color: white; /* Text color : white */
+    text-decoration: none; /* Removing the underlined text : white */
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* become underlined when hover*/
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.3
+    ); /* with a white background color*/
+}
+.navbar .disconnect {
+    display: none; /* Hide the Disconnect Button*/
+}
+
+.website-main-title {
+    text-align: center; /* center the title (horizantally)*/
+    margin: 50px; /* add margin top & bottom */
+    font-size: 60px; /* make the text bigger */
+    font-weight: normal; /* make the text slim */
+    color: white; /* text color : white */
+    text-shadow: 1.5px 1.5px black; /* shadow text 1.5px on the right & 1.5px on the bottom */
+}
+
+.body-container {
+    display: inline;
+}
+
+.main-body {
+    background-color: tomato;
+    width: 100%;
+    height: 100%;
+}
+
+.purchase-section {
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+}
+
+.login-container,
+.user-fullName {
+    text-align: center; /* center the title (horizantally)*/
+    display: block;
 }

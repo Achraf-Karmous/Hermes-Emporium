@@ -6,7 +6,7 @@
 console.group(
     "--------------------------- Database Initialization --------------------------"
 );
-myDatabase = Database();
+window.myDatabase = Database();
 if (localStorage.length === 0) {
     myDatabase.init();
 } else {

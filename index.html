@@ -18,17 +18,24 @@
 <body>
 
     <div class="webpage-container">
-        <div class="navbar-container">
-            <button>Home</button>
-            <button>Categories</button>
-            <button>Users</button>
-            <button>Contact</button>
-            <button>About</button>
-            <button>Login</button>
-            <button>Disconnect</button>
+        <div class="topside-container">
+            <div class="navbar">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Categories</a></li>
+                    <li><a href="">Users</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="" class="login">Login</a></li>
+                    <li><a href="" class="disconnect">Disconnect</a></li>
+                </ul>
+            </div>
+            <h1 class="website-main-title">Hermes Emporium</h1>
         </div>
 
         <div class="body-container">
+            <div class="main-body"></div>
+            <div class="purchase-section"></div>
         </div>
 
     </div>
@@ -53,6 +60,7 @@
     <script src="./scripts/controller/Category_Manager.js"></script>
     <script src="./scripts/controller/Product_Manager.js"></script>
     <script src="./scripts/controller/Bill_Manager.js"></script>
+    <script src="./scripts/vue/Login_Form.js"></script>
     <script src="./scripts/controller/_Init_System.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
